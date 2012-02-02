@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+    <script src="js/raphael-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/dihedral.js" type="text/javascript"></script>
+    <script>
+    window.onload = function () {
+      var paper = Raphael("ngon", 640, 480),
+        n = 5,
+        cx = 200,
+        cy = 200,
+        ngon = paper.ngon_symm(n, cx, cy, 50);
+
+        paper.circle(cx, cy, 2).attr("fill", "#ff0000", "stroke", "#ff0000");
+
+    };
+    </script>
+    </head>
+    <body>
+        <div id="ngon"></div>
+    </body>
+</html>
+
