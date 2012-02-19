@@ -30,7 +30,7 @@ The *stabilizer* of an element $s \in S$ is the set of group elements for which 
 
 $$G_s = \{ g \in G : g \cdot s = s \}$$
 
-It's not hard to see that this is a subgroup: if $g, h$ are in $G_s$, then $gh \cdot s = g \cdot (h \cdot s) = g \cdot s = s$, so it's closed; the identity element clearly belongs; and for any $g \in G_s$, $s = 1 \cdot s = g^{-1} g \cdot s = g^{-1} \cdot (g \cdot s) = g^{-1} \cdot s$, so $g^-1 \in G_s$.
+It's not hard to see that this is a subgroup: if $g, h$ are in $G_s$, then $gh \cdot s = g \cdot (h \cdot s) = g \cdot s = s$, so it's closed; the identity element clearly belongs; and for any $g \in G_s$, $s = 1 \cdot s = g^{-1} g \cdot s = g^{-1} \cdot (g \cdot s) = g^{-1} \cdot s$, so $g^{-1} \in G_s$.
 
 The **kernel** of a group action is the set of group elements which fixes *every* element of $S$ under the action:
 
@@ -48,6 +48,15 @@ The stabilizer is a subgroup, as we proved above, so we can take this group and 
 
 $$ker(\ast) = \{g \in G : \forall a \in A \ gag^{-1} = a \} = \{ g \in G : \forall a \in A \ ga = ag \} = C_G(A)$$
 
+Since the centralizer and normalizer of sets are just the stabilizer and kernel of certain group actions, it follows from the stabilizer and kernel being subgroups that the centralizer and normalizer are subgroups.
+
+# Addendum
+Stashing a quick proof here that $gAg^{-1} = A$ iff $gA = Ag$:
+
+$( \Rightarrow )$ Supposing $gAg^{-1} = A, this means that every element of the g-conjugate of A is also in A, and that every element of $A$ is in the g-conjugate of A. So for $x = ga \in gA$, $gag^{-1}$ is an element of the g-conjugate of A. This element is also in A (by assumption), so that $gag^{-1} = b$ where $b$ is in $A$. But this implies $ga = bg = x$, so $x$ is in $Ag$. This proves $gA \cup Ag$. But if $x = cg \in Ag$, $c$ is an element of $A$, so there's some $d \in A$ such that $gdg^{-1} = c$, which implies that $gd = cg = x$. That is, $x \in gA$ and $Ag \cup gA$. This establishes $gA = Ag$.
+
+
+$( \Leftarrow )$ The converse is proved in exactly the same way.
 
 [conjugate_wiki]: http://en.wikipedia.org/wiki/Conjugation_(group_theory)
 [group_action_wiki]: http://en.wikipedia.org/wiki/Group_action
